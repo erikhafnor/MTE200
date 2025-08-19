@@ -83,7 +83,7 @@ function createExerciseCard(ex) {
     <h4>${title}</h4>
     <div class="badges">${ex.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
     <p>${blurb}</p>
-    <a href="${encodeURI(ex.file)}" download>${lang==='no'?'Last ned (.docx)':'Download (.docx)'}</a>
+    <a href="exercise.html?id=${encodeURIComponent(ex.id)}" aria-label="${title}">${lang==='no'?'Åpne interaktiv':'Open interactive'}</a>
   `;
   return card;
 }

@@ -8,6 +8,10 @@ const I18N_DICT = {
     exercise_catalog: 'Exercise Catalog',
   search_placeholder: 'Search exercises...',
   empty_results: 'No exercises match your search.',
+  previous_btn: 'Previous',
+  next_btn: 'Next',
+  reset_progress: 'Reset Progress',
+  download_docx: 'Download .docx',
     about_header: 'About',
     about_text: 'These lab exercises support core learning outcomes in medical technology: measurement principles, risk management, patient safety, and regulatory awareness.',
     footer_course: 'MTE200 – Educational use only.'
@@ -20,6 +24,10 @@ const I18N_DICT = {
     exercise_catalog: 'Øvelseskatalog',
   search_placeholder: 'Søk i øvelser...',
   empty_results: 'Ingen øvelser matcher søket.',
+  previous_btn: 'Forrige',
+  next_btn: 'Neste',
+  reset_progress: 'Nullstill fremdrift',
+  download_docx: 'Last ned .docx',
     about_header: 'Om',
     about_text: 'Disse labøvelsene støtter læringsmål i medisinsk teknologi: måleprinsipper, risikohåndtering, pasientsikkerhet og regulatorisk forståelse.',
     footer_course: 'MTE200 – Kun til undervisningsbruk.'

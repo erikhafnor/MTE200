@@ -7,6 +7,8 @@ Static site (GitHub Pages) for the course MTE200 Medical Equipment.
 - `assets/css/style.css` – styling
 - `assets/js/i18n.js` – language handling
 - `assets/js/exercises.js` – exercise metadata + dynamic rendering
+- `assets/js/exerciseSteps.js` – structured step-by-step content per exercise
+- `exercise.html` – interactive stepper view (progress stored in localStorage)
 - `assets/js/main.js` – small helpers
 - Word `.docx` lab files kept at repo root for direct download
 
