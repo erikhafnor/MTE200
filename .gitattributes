@@ -1,0 +1,10 @@
+# Ensure consistent LF endings
+* text=auto eol=lf
+
+# Treat binary files
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
