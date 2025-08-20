@@ -104,8 +104,16 @@ for fname in DOC_FILES:
             para.decompose()
 
     # Collapse excessive blank lines in HTML string
-    prettified = soup.prettify()
-    cleaned = re.sub(r'\n{3,}', '\n\n', prettified if isinstance(prettified, str) else str(prettified))
+    # Avoid prettify() because it inserts newlines that can corrupt long data URIs.
+    # Insert a wrapper div to allow scoping styles if needed.
+    wrapper = soup.new_tag('div')
+    wrapper['class'] = ['lab-fragment']
+    # Move all top-level children into wrapper
+    for child in list(soup.body.contents if soup.body else soup.contents):
+        # Skip stray newlines
+        wrapper.append(child)
+    cleaned_raw = str(wrapper)
+    cleaned = re.sub(r'\n{3,}', '\n\n', cleaned_raw)
     summary[fname] = cleaned
     (out_dir / (path_obj.stem + '.html')).write_text(cleaned, encoding='utf-8')
 
