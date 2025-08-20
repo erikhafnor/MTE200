@@ -107,7 +107,52 @@
       const html = await resp.text();
       const full = document.getElementById('full-text');
       full.innerHTML = '<div class="lab-meta-callout">'+(window.currentLang==='no'?'Dette er den fulle teksten fra Word-filen.':'Full text extracted from the original Word document.')+'</div>' + html;
+      buildTOC();
+      initScrollSpy();
     } catch(e){/* ignore */}
+  }
+
+  function slugify(text){
+    return text.toLowerCase().trim().replace(/[^a-z0-9\u00C0-\u017F\s-]/g,'').replace(/\s+/g,'-').slice(0,80);
+  }
+
+  function buildTOC(){
+    const container = document.getElementById('full-text');
+    const tocEl = document.getElementById('toc');
+    if(!container || !tocEl) return;
+    const headings = [...container.querySelectorAll('h2, h3, h4')];
+    if(!headings.length){ tocEl.innerHTML=''; return; }
+    const list = document.createElement('ol');
+    headings.forEach(h=>{
+      const level = parseInt(h.tagName.substring(1),10);
+      if(!h.id){ h.id = slugify(h.textContent); }
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      a.classList.add('toc-lvl-'+level);
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    tocEl.innerHTML = '<h5>'+(window.currentLang==='no'?'Oversikt':'Outline')+'</h5>';
+    tocEl.appendChild(list);
+  }
+
+  function initScrollSpy(){
+    const tocEl = document.getElementById('toc');
+    if(!tocEl) return;
+    const links = [...tocEl.querySelectorAll('a')];
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          links.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+entry.target.id));
+        }
+      });
+    },{ rootMargin: '0px 0px -70% 0px', threshold:0});
+    links.forEach(l=>{
+      const target = document.getElementById(l.getAttribute('href').slice(1));
+      if(target) observer.observe(target);
+    });
   }
 
   function setMode(mode){

@@ -32,19 +32,24 @@
       </div>
     </div>
   </section>
-  <section class="stepper-wrapper" id="steps-view">
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-    <div class="stepper-head">
-      <span id="step-count" class="step-count"></span>
-      <span id="completion-indicator" class="completion-indicator"></span>
+  <div class="exercise-shell">
+    <aside id="toc" class="toc" aria-label="Outline"></aside>
+    <div class="exercise-main">
+      <section class="stepper-wrapper" id="steps-view">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="stepper-head">
+          <span id="step-count" class="step-count"></span>
+          <span id="completion-indicator" class="completion-indicator"></span>
+        </div>
+        <div id="steps-container" class="steps-container" aria-live="polite"></div>
+        <div class="nav-buttons">
+          <button id="prev-step" class="nav-btn" data-i18n="previous_btn">Previous</button>
+          <button id="next-step" class="nav-btn primary" data-i18n="next_btn">Next</button>
+        </div>
+      </section>
+      <section id="full-text" class="full-text-wrapper"></section>
     </div>
-    <div id="steps-container" class="steps-container" aria-live="polite"></div>
-    <div class="nav-buttons">
-      <button id="prev-step" class="nav-btn" data-i18n="previous_btn">Previous</button>
-      <button id="next-step" class="nav-btn primary" data-i18n="next_btn">Next</button>
-    </div>
-  </section>
-  <section id="full-text" class="full-text-wrapper"></section>
+  </div>
 </main>
 <footer class="site-footer">
   <div class="inner">
