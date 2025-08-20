@@ -92,6 +92,9 @@ table.lab-table th,table.lab-table td{padding:.6rem .75rem;border-bottom:1px sol
 table.lab-table th{background:#f5f5f5;font-weight:600;font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;}
 table.lab-table tr:last-child td{border-bottom:none;}
 table.lab-table tbody tr:hover{background:#fafafa;}
+figure.lab-figure{margin:2.2rem 0;display:flex;flex-direction:column;gap:.6rem;}
+figure.lab-figure img{border:1px solid #e5e5e5;box-shadow:0 4px 18px -8px rgba(0,0,0,.08);border-radius:12px;max-width:100%;height:auto;}
+figure.lab-figure figcaption{font-size:.65rem;letter-spacing:.5px;text-transform:uppercase;font-weight:500;color:var(--fg-soft);background:#fff;padding:.55rem .8rem;border:1px solid #e5e5e5;border-radius:8px;align-self:flex-start;max-width:80%;}
 
 /* Layout shell with TOC */
 .exercise-shell{display:grid;grid-template-columns:280px 1fr;gap:3rem;padding:0 clamp(1.5rem,6vw,5rem) 6vh;align-items:start;}

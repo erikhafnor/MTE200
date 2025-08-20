@@ -50,6 +50,54 @@ for fname in DOC_FILES:
         tbl.replace_with(wrapper)
         wrapper.append(tbl)
 
+    # Image caption detection: wrap <img> with <figure><img><figcaption>
+    for img in soup.find_all('img'):
+        parent = img.parent
+        if parent is None:
+            continue
+        caption_text = ''
+        # Case 1: text in same paragraph after image
+        if parent and parent.name == 'p':
+            # Capture text nodes after the image
+            collect = []
+            seen = False
+            for node in parent.contents:
+                if node is img:
+                    seen = True
+                    continue
+                if seen:
+                    # Only consider NavigableString pieces
+                    txt = str(node).strip()
+                    if txt:
+                        collect.append(txt)
+            if collect:
+                caption_text = ' '.join(collect).strip()
+                # Remove trailing text nodes so they don't duplicate
+                # Simpler: clear the parent then re-insert img later (safe if only caption text besides img)
+                parent.clear()
+                parent.append(img)
+        # Case 2: next sibling paragraph short
+        if not caption_text:
+            next_p = parent.find_next_sibling('p') if parent else None
+            if next_p:
+                candidate = next_p.get_text(strip=True)
+                if candidate and len(candidate) <= 110 and next_p.find('img') is None:
+                    caption_text = candidate
+                    next_p.decompose()
+        # Fallback: use alt attribute if meaningful
+        if not caption_text:
+            alt = img.get('alt','').strip()
+            if alt and len(alt.split()) <= 16:
+                caption_text = alt
+        # Wrap if we have caption or always wrap to standardize
+        figure = soup.new_tag('figure', **{'class':'lab-figure'})
+        img.replace_with(figure)
+        figure.append(img)
+        if caption_text:
+            cap = soup.new_tag('figcaption')
+            cap.string = caption_text
+            figure.append(cap)
+
     # Remove empty paragraphs
     for para in soup.find_all('p'):
         if not para.get_text(strip=True) and not para.find('img'):
