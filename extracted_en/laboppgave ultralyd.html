@@ -1,0 +1,154 @@
+<div class="lab-fragment">
+  <h1>Ultrasound Laboratory – GE LOGIQ S8 & IHE Scheduled Workflow</h1>
+  <h2>Learning Objectives</h2>
+  <ul>
+    <li>Perform and optimize an ultrasound examination: image optimization, quantitative measurements, and structured analysis.</li>
+    <li>Execute an end‑to‑end imaging workflow using IHE Scheduled Workflow components (HIS → RIS/PACS → Modality → Workstation) including HL7 ADT and DICOM MWL & Storage.</li>
+    <li>Conduct performance / quality tests on an ultrasound system using a Kyoto Kagaku N‑365 phantom (axial, lateral/angular resolution, near-field resolution, cyst sizing, string target spacing).</li>
+    <li>Document and archive images into a PACS and retrieve them via a diagnostic viewer (OHIF) for verification and longitudinal QA.</li>
+    <li>Carry out a limited functional test on a volunteer (vascular scanning – carotid or radial artery) ethically and safely.</li>
+    <li>Understand and explain key imaging parameter controls (Dynamic Range, CrossBeam, Focus Width, Suppression, Line Density) and probe label nomenclature.</li>
+  </ul>
+  <h2>Safety & Handling</h2>
+  <ul>
+    <li>Handle probes carefully – acoustic lens is delicate; always use ultrasound gel (never scan the phantom dry).</li>
+    <li>Secure probe cables in designated holders to avoid strain and tripping hazards.</li>
+    <li>Use only approved coupling gel with the phantom; wipe excess gently after use.</li>
+    <li>Volunteer scanning: obtain verbal consent; no diagnostic intent, minimal exposure, follow infection control (probe covers if scanning vascular access sites).</li>
+  </ul>
+  <h2>Equipment</h2>
+  <ul>
+    <li>GE LOGIQ S8 ultrasound system (modalitet)</li>
+    <li>Kyoto Kagaku N‑365 ultrasound phantom (manual)</li>
+    <li>HAPI Test Panel (HIS) – HL7 ADT message source</li>
+    <li>DCM4CHE (RIS/PACS)</li>
+    <li>OHIF Viewer (Workstation / DICOM viewer)</li>
+    <li>Probe set (e.g., linear, curvilinear, phased array – identify from label codes)</li>
+    <li>Ultrasound gel, cleaning materials</li>
+  </ul>
+  <h2>IHE Scheduled Workflow Overview</h2>
+  <p>The Scheduled Workflow (SWF) profile coordinates patient demographics & orders (HL7 ADT/ORM) with Modality Worklist (MWL) query and subsequent DICOM image storage and query/retrieve. Sequence:</p>
+  <ol>
+    <li>Create patient (ADT) in HIS (HAPI Test Panel).</li>
+    <li>Send HL7 message to RIS/PACS (DCM4CHE) – creates order/scheduling record.</li>
+    <li>On the ultrasound (Modality) perform DICOM MWL query; select the scheduled patient/work item.</li>
+    <li>Acquire phantom and (later) volunteer images; store to PACS (DICOM C‑STORE).</li>
+    <li>Query & retrieve in OHIF viewer (DICOM Q/R) to confirm archival integrity.</li>
+  </ol>
+  <h2>Part A – Worklist & Patient Setup</h2>
+  <ol>
+    <li>Open HAPI Test Panel; load provided HL7 ADT file (Canvas) with given demographics; transmit to RIS/PACS.</li>
+    <li>On LOGIQ S8, perform MWL query; verify patient appears; select and begin exam from worklist (ensures demographic consistency in DICOM headers).</li>
+  </ol>
+  <h2>Part B – Phantom Performance Tests (Kyoto Kagaku N‑365)</h2>
+  <p>For each test record settings: transducer type, frequency (fundamental / harmonic), depth, focus position(s), dynamic range, gain (overall / TGC), line density / CrossBeam status, image preset.</p>
+  <ol>
+    <li><strong>Axial Resolution:</strong> Increase frequency; optimize focus at target depth; measure minimum separable vertical (depth) spacing of two reflectors.</li>
+    <li><strong>Angular (Lateral) Resolution:</strong> Use appropriate phantom targets; vary focus and beam compounding (CrossBeam) to observe lateral separation capability.</li>
+    <li><strong>Near-Field Resolution:</strong> Evaluate shallow targets; adjust frequency and focus; note degradation due to ring-down / dead zone; record minimum detectable structure depth.</li>
+    <li><strong>Cyst (Anechoic) Measurement:</strong> Measure depth & diameter (calipers) for several cysts; compare to phantom specification; compute % error.</li>
+    <li><strong>String Targets Spacing:</strong> Measure inter-string distances; compare with manual spec; record deviation.</li>
+    <li>Capture and store representative images for each test (include annotations / measurement calipers).</li>
+  </ol>
+  <h3>Table 1: Phantom Test Summary</h3>
+  <table>
+    <thead>
+      <tr><th>Test</th><th>Probe</th><th>Freq (MHz)</th><th>Depth (cm)</th><th>Focus # / Depth</th><th>Key Settings (DR, CrossBeam, Line Density)</th><th>Measured Value(s)</th><th>Spec / Ref</th><th>% Error</th><th>Image Stored? (Y/N)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Axial Resolution</td><td></td><td></td><td></td><td></td><td></td><td>Δz=</td><td></td><td></td><td></td></tr>
+      <tr><td>Lateral (Angular) Resolution</td><td></td><td></td><td></td><td></td><td></td><td>Δx=</td><td></td><td></td><td></td></tr>
+      <tr><td>Near-Field Resolution</td><td></td><td></td><td></td><td></td><td></td><td>Min depth=</td><td></td><td></td><td></td></tr>
+      <tr><td>Cyst 1 Diameter</td><td></td><td></td><td></td><td></td><td></td><td>D=</td><td></td><td></td><td></td></tr>
+      <tr><td>Cyst 2 Diameter</td><td></td><td></td><td></td><td></td><td></td><td>D=</td><td></td><td></td><td></td></tr>
+      <tr><td>String Target Interval</td><td></td><td></td><td></td><td></td><td></td><td>Δs=</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Part C – Image Optimization (Use LOGIQ S8 Manual Chapter 2)</h2>
+  <p>Iteratively adjust parameters for each phantom test to achieve optimal lesion contrast and edge definition. Document the rationale for chosen settings (e.g., lowered dynamic range to enhance cyst conspicuity, increased line density for lateral resolution at cost of frame rate).</p>
+  <h3>Table 2: Optimization Parameters Rationale</h3>
+  <table>
+    <thead>
+      <tr><th>Test / Image</th><th>Parameter Adjusted</th><th>Setting</th><th>Rationale (Physics-Based)</th><th>Trade-off (e.g., frame rate)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Part D – DICOM Storage & Verification</h2>
+  <ol>
+    <li>End exam; send all selected images to PACS (C‑STORE). Record Study Instance UID (if visible).</li>
+    <li>In OHIF viewer, query PACS for patient; verify images appear and measurements embedded (Structured Report if generated).</li>
+    <li>Note any header fields of interest (PatientName, StudyDescription consistency with order; any missing tags).</li>
+  </ol>
+  <h3>Table 3: DICOM Workflow Verification</h3>
+  <table>
+    <thead>
+      <tr><th>Step</th><th>Action</th><th>Result</th><th>Issues / Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>HL7 ADT Sent</td><td></td><td></td><td></td></tr>
+      <tr><td>MWL Query</td><td></td><td></td><td></td></tr>
+      <tr><td>Image Acquisition</td><td></td><td></td><td></td></tr>
+      <tr><td>C-STORE to PACS</td><td></td><td></td><td></td></tr>
+      <tr><td>OHIF Retrieval</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Part E – Limited Functional Test (Volunteer Vascular Scan)</h2>
+  <ol>
+    <li>Start a new exam (not tied to phantom order—note patient volunteer identifier anonymized).</li>
+    <li>Select linear probe; optimize for superficial vascular imaging (appropriate frequency & depth).</li>
+    <li>Scan carotid (or radial) artery in longitudinal & transverse planes; adjust gain, dynamic range, focus to clearly delineate vessel wall.</li>
+    <li>Optional: Activate Doppler (color / spectral) to illustrate flow; note angle correction (≤60°) and sample volume placement.</li>
+    <li>Capture representative images (B‑mode and Doppler) – store but ensure non-clinical labeling.</li>
+  </ol>
+  <h2>Key Parameter Definitions</h2>
+  <ul>
+    <li><strong>Dynamic Range:</strong> Logarithmic compression range mapping echo amplitude to grayscale; lower values increase contrast but risk saturation.</li>
+    <li><strong>CrossBeam (Spatial Compounding):</strong> Averages multiple steering angles reducing speckle and edge shadowing; may decrease frame rate and reduce appearance of certain specular reflections.</li>
+    <li><strong>Focus Width:</strong> Lateral aperture size / number of elements used at focus; wider can improve lateral resolution at focus but reduce frame rate and increase sidelobes.</li>
+    <li><strong>Suppression (Speckle / Noise Reduction):</strong> Adaptive filtering reducing high-frequency noise; excessive use can blur fine texture or small lesion margins.</li>
+    <li><strong>Line Density:</strong> Number of scan lines per frame; higher improves lateral resolution & contrast resolution but lowers frame rate.</li>
+  </ul>
+  <h2>Probe Label Nomenclature (Examples)</h2>
+  <ul>
+    <li>Lxx: Linear array, xx MHz center or frequency range emphasis (e.g., L12‑5).</li>
+    <li>Cxx: Curvilinear array for abdominal/OB (e.g., C5‑2).</li>
+    <li>P or S / Sector: Phased array for cardiac intercostal windows (e.g., P4‑2).</li>
+  </ul>
+  <h2>Analysis & Reflection Questions</h2>
+  <ol>
+    <li>How did adjusting dynamic range affect cyst detection and string target contrast? Provide before/after image references.</li>
+    <li>Quantify improvement (if any) in lateral resolution (Δx) with increased line density and CrossBeam enabled versus baseline.</li>
+    <li>Discuss trade-offs between frame rate and spatial resolution for vascular Doppler imaging.</li>
+    <li>Explain why axial resolution primarily depends on pulse length (bandwidth) while lateral depends on aperture & focusing.</li>
+    <li>Identify potential systematic errors in phantom measurements (speed of sound assumption, caliper placement, probe pressure) and estimate magnitude.</li>
+    <li>Evaluate whether stored DICOM metadata correctly preserved measurement annotations; note any missing structured reporting elements.</li>
+    <li>For the volunteer scan, comment on image optimization strategies ensuring clear intima-media delineation.</li>
+  </ol>
+  <h2>Common Pitfalls</h2>
+  <ul>
+    <li>Forgetting to perform MWL query leading to manual patient entry mismatch.</li>
+    <li>Not saving images immediately after optimization (losing settings context).</li>
+    <li>Excess probe pressure altering phantom geometry or vascular lumen shape.</li>
+    <li>Overusing suppression leading to loss of low-contrast lesion visibility.</li>
+    <li>Failing to note line density and CrossBeam status in measurement tables (difficult to reproduce).</li>
+  </ul>
+  <h2>Checklist</h2>
+  <ul>
+    <li>Patient created and MWL used (Table 3 updated).</li>
+    <li>Phantom tests completed with images stored; Table 1 populated.</li>
+    <li>Optimization rationale documented (Table 2).</li>
+    <li>DICOM storage verified in OHIF; Table 3 filled.</li>
+    <li>Volunteer vascular images captured (non-diagnostic) & parameters noted.</li>
+    <li>All analysis questions answered.</li>
+  </ul>
+  <h2>References</h2>
+  <ol>
+    <li>GE LOGIQ S8 User / Service Manual (Chapter 2 optimization).</li>
+    <li>Kyoto Kagaku N‑365 Phantom Manual.</li>
+    <li>Springer Handbook of Medical Technology – Ultrasound Diagnostics (Ch. 17).</li>
+    <li>IHE Scheduled Workflow Profile (https://wiki.ihe.net/).</li>
+  </ol>
+  <p><em>English adaptation – initial version. Verify probe code specifics and CrossBeam nomenclature for LOGIQ S8 during bilingual review.</em></p>
+</div>

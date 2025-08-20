@@ -1,0 +1,127 @@
+<div class="lab-fragment" lang="en">
+  <h2>Non‑Invasive Blood Pressure (NIBP) & Pulse Oximetry (SpO₂)</h2>
+  <p class="lead">In this lab you will configure the LIFEPAK 15 monitor/defibrillator for <strong>non‑invasive blood pressure</strong> (NIBP) and <strong>pulse oximetry</strong> (SpO₂) measurements, perform a calibration check, explore hydrostatic effects, and interpret plethysmographic waveforms and measurement limitations. Measurements are for training only and must not be used for diagnosis.</p>
+
+  <h3>Learning Objectives</h3>
+  <ul>
+    <li>Explain the oscillometric principle used for automated NIBP measurement.</li>
+    <li>Describe the functional principle of pulse oximetry (differential light absorption at two wavelengths).</li>
+    <li>Perform a correct NIBP measurement sequence on the LIFEPAK 15 and document results.</li>
+    <li>Execute the "PIP – NIBP Calibration Check" steps conceptually (using the allowed hand bulb in this lab).</li>
+    <li>Quantify hydrostatic pressure error introduced by cuff height relative to right atrium.</li>
+    <li>Interpret the plethysmograph waveform and identify artifacts (motion, low perfusion, cuff inflation interference).</li>
+    <li>List external factors that can invalidate NIBP or SpO₂ readings.</li>
+  </ul>
+
+  <h3>Safety & Ethical Notes</h3>
+  <ul>
+    <li>Participation as a measurement subject is voluntary; any out‑of‑range value here is treated as <em>non‑clinical training data</em>.</li>
+    <li>Do not use results for diagnostic or therapeutic decisions.</li>
+    <li>Follow manufacturer warnings & precautions (LIFEPAK 15 manual, NIBP section & pulse oximetry section).</li>
+    <li>Use appropriately sized cuffs; excessive pressure or repeated rapid cycling can cause discomfort or skin changes.</li>
+    <li>Remove nail polish / artificial nails on the selected SpO₂ finger if possible to improve signal quality.</li>
+    <li>Ensure the sensor cable and cuff tubing are routed to avoid tripping or inadvertent traction.</li>
+  </ul>
+
+  <h3>Equipment</h3>
+  <ul>
+    <li>LIFEPAK 15 monitor/defibrillator (configured for training mode).</li>
+    <li>Appropriate NIBP cuff (match arm circumference; bladder length ≈ 80% of arm circumference, width ≈ 40%).</li>
+    <li>SpO₂ finger sensor (transmission type) and extension cable (if applicable).</li>
+    <li>Hand inflation bulb (used instead of syringe pump for calibration check steps in this lab).</li>
+    <li>Stopwatch or device timer (for repetition interval if testing hydrostatic effect).</li>
+    <li>Data recording sheet / digital log (running protocol).</li>
+  </ul>
+
+  <h3>Background Summary</h3>
+  <p><strong>Oscillometric NIBP:</strong> The cuff is inflated above systolic pressure, then deflated while the device analyzes arterial wall oscillation amplitudes transmitted to the cuff. Mean arterial pressure (MAP) corresponds approximately to the peak oscillation amplitude; systolic and diastolic values are algorithmically derived from characteristic amplitude ratios. <strong>Pulse oximetry:</strong> Uses red and infrared light to estimate arterial oxygen saturation (SpO₂) via the ratio of pulsatile absorption changes; assumes pulsatile component originates from arterial blood.</p>
+  <p><strong>Hydrostatic component:</strong> A vertical displacement Δh (cm) between cuff (or measurement site) and the right atrium introduces a pressure shift ≈ 0.77 mmHg per cm (ρgh). Elevation above the atrium lowers measured pressure; lowering increases it.</p>
+
+  <h3>Pre‑Measurement Checklist</h3>
+  <ol>
+    <li>Verify device self‑test passed and NIBP/SpO₂ modules enabled.</li>
+    <li>Select correct cuff size; wrap snugly (two fingers should slide under edge) with artery marker over brachial artery.</li>
+    <li>Subject seated (or semi‑recumbent) with back supported, legs uncrossed, arm supported at heart level, relaxed ≥5 min.</li>
+    <li>No talking, movement, or muscle tensing during measurement.</li>
+    <li>Select a finger (index or middle) for SpO₂ with warm, perfused skin; attach sensor correctly (emitter & detector aligned).</li>
+    <li>Remove bracelets/watches that may compress vasculature near cuff.</li>
+  </ol>
+
+  <h3>Procedure</h3>
+  <ol>
+    <li><strong>Baseline NIBP:</strong> Initiate an automatic NIBP cycle. Record systolic / diastolic / MAP (if shown) and pulse rate.</li>
+    <li><strong>Identify Method:</strong> Examine cuff pressure vs time curve or display indicators. Describe evidence that method is oscillometric (e.g., detection of amplitude envelope during deflation).</li>
+    <li><strong>SpO₂ Acquisition:</strong> Place SpO₂ sensor; wait for stable numerical value and plethysmograph tracing. Record baseline SpO₂ and pulse rate.</li>
+    <li><strong>Calibration Check (Conceptual):</strong> Review the "PIP – NIBP Calibration Check" procedure. In this training context, use the hand bulb to manually inflate while observing pressure accuracy (do not exceed recommended test pressure). Note any deviation criteria from the document.</li>
+    <li><strong>Hydrostatic Effect Experiment:</strong> With cuff at heart level obtain a reference reading. Then (a) raise the cuffed arm ~30 cm above heart level for a new reading, (b) lower ~30 cm below. Keep other conditions constant. Record differences ΔP_up and ΔP_down. Compare to theoretical ± (0.77 mmHg/cm × 30 cm) ≈ ±23 mmHg potential (actual will be less due to limitations of posture and venous effects).</li>
+    <li><strong>SpO₂ During Cuff Inflation:</strong> Place SpO₂ sensor on same limb as cuff. Start a NIBP measurement and observe plethysmograph and SpO₂ numerical behavior during inflation/occlusion. Describe the transient changes (signal dampening, dropout, recovery).</li>
+    <li><strong>Repeatability:</strong> After ≥1 min rest, repeat a baseline NIBP to assess variation (report difference vs first baseline).</li>
+    <li><strong>Documentation:</strong> Maintain a running protocol (timestamped entries) for each action and observation.</li>
+  </ol>
+
+  <h3>Measurements & Analysis</h3>
+  <ol>
+    <li><strong>Hydrostatic Quantification:</strong> Calculate theoretical hydrostatic pressure shift for each height change (ΔP_theory = 0.77 mmHg/cm × Δh). Compare with measured ΔP_measured. Discuss discrepancies (e.g., arm muscle tension, venous pooling, cuff repositioning).</li>
+    <li><strong>Artifact Classification:</strong> List observed artifacts (motion spikes, poor perfusion causing low pleth amplitude, inflation occlusion) and mitigation steps.</li>
+    <li><strong>Inter-Measurement Variability:</strong> Compute absolute difference between baseline repeats. Is it within expected device repeatability (typically ±5 mmHg for systolic/diastolic)?</li>
+    <li><strong>Pulse Rate Consistency:</strong> Compare pulse rate from NIBP vs SpO₂ at baseline (state difference).</li>
+  </ol>
+
+  <h3>External Factors Affecting Accuracy</h3>
+  <ul>
+    <li>Cuff size mismatch (too small → false high; too large → false low).</li>
+    <li>Cuff not at heart level (hydrostatic offset).</li>
+    <li>Arm movement / muscle contraction during measurement.</li>
+    <li>Arrhythmias (e.g., atrial fibrillation) causing variable oscillation amplitudes.</li>
+    <li>Poor peripheral perfusion (cold extremities) reducing plethysmograph signal.</li>
+    <li>Nail polish / artificial nails affecting light transmission (SpO₂).</li>
+    <li>Ambient light intrusion or sensor misalignment.</li>
+    <li>Excessive patient talking or laughter (muscle and movement artifacts).</li>
+  </ul>
+
+  <h3>Documentation (Running Protocol)</h3>
+  <ul>
+    <li>Date/time, subject code, operator initials.</li>
+    <li>Cuff size, arm laterality, subject posture.</li>
+    <li>Baseline NIBP (Sys / Dia / MAP) and pulse rate.</li>
+    <li>Baseline SpO₂ and pulse rate.</li>
+    <li>Hydrostatic experiment values (arm height Δh, measured pressures, theoretical offsets).</li>
+    <li>Calibration check qualitative notes (pass/fail criteria reviewed).</li>
+    <li>Artifacts observed & corrective actions.</li>
+    <li>Repeat measurement values (for variability analysis).</li>
+  </ul>
+
+  <h3>Reflection & Questions</h3>
+  <ol>
+    <li>How closely did measured hydrostatic pressure differences align with theory? What factors limited correlation?</li>
+    <li>Which artifact had the greatest impact on NIBP accuracy? On SpO₂ stability?</li>
+    <li>Why can oscillometric devices be less reliable in arrhythmias?</li>
+    <li>Explain the physiological origin of the plethysmograph waveform morphology.</li>
+    <li>If SpO₂ signal drops during cuff inflation, what does that reveal about arterial occlusion dynamics?</li>
+  </ol>
+
+  <h3>Common Pitfalls</h3>
+  <ul>
+    <li>Incorrect cuff size selection leading to systematic error.</li>
+    <li>Arm not supported at heart level (introducing hydrostatic bias).</li>
+    <li>Initiating a new NIBP cycle too soon (vascular reactivity not recovered).</li>
+    <li>Failing to log MAP or conditions (posture, arm position) reducing reproducibility.</li>
+    <li>Ignoring signal quality indicators on SpO₂ before recording value.</li>
+  </ul>
+
+  <h3>Checklist (Sign Off)</h3>
+  <ul>
+    <li>Baseline NIBP & SpO₂ recorded.</li>
+    <li>Hydrostatic experiment performed (raised & lowered) with calculations.</li>
+    <li>SpO₂ during cuff inflation observed & described.</li>
+    <li>Repeatability assessment documented.</li>
+    <li>Reflection questions answered.</li>
+    <li>All safety and voluntary participation notes acknowledged.</li>
+  </ul>
+
+  <h3>References</h3>
+  <ul>
+    <li>LIFEPAK 15 Operating Instructions (NIBP & SpO₂ sections).</li>
+    <li>Standard texts on hemodynamic monitoring & pulse oximetry principles.</li>
+  </ul>
+</div>

@@ -1,0 +1,155 @@
+<div class="lab-fragment">
+  <h1>Infusion Pumps Laboratory</h1>
+  <h2>Learning Objectives</h2>
+  <ul>
+    <li>Differentiate design and performance characteristics of a volumetric (peristaltic/linear) infusion pump versus a syringe infusion pump.</li>
+    <li>Configure and execute standardized flow accuracy and occlusion pressure tests using a Fluke IDA-5 Infusion Device Analyzer.</li>
+    <li>Interpret rate, deviation (%), time, and peak pressure outputs and relate them to manufacturer specifications and IEC 60601-2-24 concepts.</li>
+    <li>Evaluate air-in-line (bubble) detection performance and upstream (negative) pressure alarm functionality.</li>
+    <li>Explain clinical implications of flow accuracy, line compliance, occlusion alarm settings, and air detection sensitivity for patient safety (infiltration, under-/over-infusion, embolism risk).</li>
+    <li>Document results in a clear, reproducible laboratory protocol suitable for quality assurance.</li>
+  </ul>
+  <h2>Safety & Warnings</h2>
+  <ul>
+    <li>Use only de‑ionized water (simulation fluid). No medications in this exercise.</li>
+    <li>Never bypass air-in-line alarms on clinical devices in patient care; here you intentionally introduce air only because the set is disconnected from any patient.</li>
+    <li>Ensure all tubing is fully primed (no bulk air) before starting quantitative flow tests—entrained air distorts volumetric accuracy and occlusion timing.</li>
+    <li>Wipe spills immediately; keep electrical connectors dry.</li>
+    <li>Follow the Fluke IDA‑5 user manual warnings; do not exceed specified pressure / vacuum limits when provoking alarms.</li>
+  </ul>
+  <h2>Equipment</h2>
+  <ul>
+    <li>Fluke IDA‑5 Infusion Device Analyzer (Channel 1 & 2)</li>
+    <li>B. Braun Infusomat Space (Volumetric infusion pump)</li>
+    <li>B. Braun Perfusor Space (Syringe infusion pump)</li>
+    <li>Appropriate administration set & syringe (50 mL syringe for syringe pump)</li>
+    <li>De‑ionized water (provided by lab engineer)</li>
+    <li>Priming syringes (≈15 mL) attached to each IDA‑5 channel set</li>
+    <li>Stopwatch (or analyzer internal timing), lab notebook / digital log</li>
+  </ul>
+  <h2>Background</h2>
+  <p>Volumetric infusion pumps typically employ linear peristaltic or cassette mechanisms delivering discrete stroke volumes; syringe pumps advance a plunger using a leadscrew/stepper system. Key performance parameters include:</p>
+  <ul>
+    <li><strong>Flow Accuracy (% deviation)</strong>: Difference between programmed and measured mean rate over a defined test volume/time.</li>
+    <li><strong>Occlusion Pressure & Alarm Delay</strong>: Time for downstream pressure to rise to alarm threshold after a distal blockage; influenced by compliance (syringe elastomer, tubing stretch) and pump mechanism.</li>
+    <li><strong>Air-in-Line Detection</strong>: Ultrasonic, optical, or pressure-based detection of bubbles; smaller detection thresholds reduce embolic risk but can increase nuisance alarms.</li>
+    <li><strong>Upstream (Negative) Pressure Monitoring</strong>: Detects inlet restrictions or empty fluid source (collapse / partial vacuum) to prevent under-infusion.</li>
+  </ul>
+  <p>Interpreting results requires understanding that syringe pumps often show shorter occlusion alarm delays (lower stored elastic energy) and potentially higher short-term flow variability at very low rates, while volumetric pumps may average pulses over time.</p>
+  <h2>Pre‑Lab Preparation</h2>
+  <ol>
+    <li>Read user & service manual sections for Infusomat Space and Perfusor Space describing: flow accuracy specification, occlusion pressure setting levels (0–9), air sensor, upstream sensor (negative pressure), and calibration references.</li>
+    <li>Review Fluke IDA‑5 manual (priming procedure, template creation: Utilities &gt; Edit Templates).</li>
+    <li>Prepare a results sheet or spreadsheet with the tables provided below.</li>
+  </ol>
+  <h2>System Setup</h2>
+  <ol>
+    <li>Program Infusomat (volumetric) with total volume 250 mL, rate 100 mL/h (Channel 1).</li>
+    <li>Program Perfusor (syringe) with syringe volume 50 mL, rate 100 mL/h (Channel 2).</li>
+    <li>Prime each administration set completely (remove air) using pump prime functions and auxiliary priming syringes (fill priming syringes with ~15 mL de‑ionized water beforehand).</li>
+    <li>On the IDA‑5 perform necessary priming to clear internal lines (manual procedure starting at page ~7 in the user manual).</li>
+  </ol>
+  <h2>Create Analyzer Test Templates (on IDA‑5)</h2>
+  <p>Create <em>two</em> templates (one can be reused, but label clearly) with the following steps (mirroring the Norwegian specification):</p>
+  <pre>Step 1  Type: Flow   Rate: 100 mL/h   Vol/Press: 25 mL   Time: 02:30   Tol%: 5
+Step 2  Type: Occlusion  Rate: 200 mL/h  Vol/Press: 487 mmHg  Time: 01:00  Tol%: 5</pre>
+  <ol>
+    <li>Utilities &gt; Edit Templates &gt; Add &gt; Enter parameters for Step 1 and Step 2 as above; save.</li>
+    <li>From channel overview: Setup &gt; Template &gt; select template &gt; Start &gt; enter arbitrary control number.</li>
+  </ol>
+  <h2>Procedure</h2>
+  <ol>
+    <li><strong>Start Flow Test (Step 1):</strong> After template start the analyzer prompts for priming. Deliver ~5 mL until IDA‑5 shows <em>Auto Start</em>. Select Auto Start, then start the pump. Repeat for Channel 2 (ESC back to overview).</li>
+    <li>Record analyzer displayed <em>rate, deviation (%), elapsed time, peak pressure</em> for each channel (use Table 1).</li>
+    <li><strong>Transition to Occlusion Test (Step 2):</strong> When volume reached (&quot;volume reached&quot;), press <em>Next</em>. Adjust the pump programmed rate to 200 mL/h. Start the pump infusion first, then start Step 2 on the analyzer.</li>
+    <li>Allow pressure rise until occlusion alarm triggers; capture peak pressure and time to alarm. (Analyzer may stop automatically at press limit.)</li>
+    <li>Document occlusion alarm level setting (e.g., Infusomat level code 0–9 and displayed mmHg, if shown) and compare to measured occlusion pressure.</li>
+    <li><strong>Air-in-Line Tests:</strong> Disconnect volumetric pump distal line from analyzer (after completing quantitative tests). Install a syringe pump set under the drop sensor (as per Norwegian instructions), distal end into a collection beaker. Introduce two bubble volumes sequentially:<ul>
+        <li>Small: 0.02–0.30 mL</li>
+        <li>Larger: ~1.5 mL</li>
+      </ul>Use 300 mL/h rate. Observe and document alarm behavior, detection latency, displayed message (Table 3).</li>
+    <li><strong>Upstream (Negative) Pressure Alarm:</strong> Gently restrict or elevate source bag / pinch upstream line to create a partial vacuum until &quot;upstream&quot; / negative pressure alarm occurs (threshold approx. -120 mbar). Record method, time, and displayed pressure (Table 4). Do not apply excessive force (avoid damaging sensors).</li>
+  </ol>
+  <h2>Data Recording</h2>
+  <h3>Table 1: Flow Accuracy (Step 1)</h3>
+  <table>
+    <thead>
+      <tr><th>Device</th><th>Programmed Rate (mL/h)</th><th>Measured Rate (mL/h)</th><th>Deviation (%)</th><th>Test Volume (mL)</th><th>Test Duration (hh:mm:ss)</th><th>Peak Pressure (mmHg)</th><th>Pass/Fail (Tol ±5%)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Infusomat (Ch 1)</td><td>100</td><td></td><td></td><td>25</td><td></td><td></td><td></td></tr>
+      <tr><td>Perfusor (Ch 2)</td><td>100</td><td></td><td></td><td>25</td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 2: Occlusion Test (Step 2)</h3>
+  <table>
+    <thead>
+      <tr><th>Device</th><th>Rate (mL/h)</th><th>Occlusion Alarm Level (set)</th><th>Measured Occlusion Pressure (mmHg)</th><th>Time to Alarm (s)</th><th>Expected Alarm Range</th><th>Pass/Fail</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Infusomat (Ch 1)</td><td>200</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Perfusor (Ch 2)</td><td>200</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 3: Air-in-Line Detection</h3>
+  <table>
+    <thead>
+      <tr><th>Introduced Air Volume (mL)</th><th>Pump Response / Alarm?</th><th>Time to Alarm (s)</th><th>Displayed Message</th><th>Action Taken (Stop? Purge?)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0.02–0.30</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>~1.5</td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 4: Upstream (Negative) Pressure Alarm</h3>
+  <table>
+    <thead>
+      <tr><th>Method Used (pinch / empty bag / elevation)</th><th>Observed Negative Pressure (mbar)</th><th>Alarm Threshold Spec (-120 mbar)</th><th>Time to Alarm (s)</th><th>Displayed Message</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td>-120</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Analysis Questions</h2>
+  <ol>
+    <li>Compare flow accuracy between the volumetric and the syringe pump. Which was closer to the programmed rate? Provide quantitative difference and hypothesize causes (mechanism, compliance, calibration state).</li>
+    <li>Explain mechanical and fluidic reasons the occlusion pressure profile and time to alarm differ between the two pump types.</li>
+    <li>Are occlusion pressure limits universal for all patients? Discuss patient size, vascular access, infiltration risk, and why adjustable levels exist.</li>
+    <li>On Infusomat Space: correlate selected occlusion level (0–9) to measured mmHg. Is mapping roughly linear? Does it match service manual values?</li>
+    <li>From the Perfusor Space service manual: identify the tool/procedure used by biomedical engineers to verify or calibrate &quot;cut-off&quot; pressure. Summarize briefly.</li>
+    <li>Evaluate air detection performance: Did the pump alarm for the smaller bubble? Discuss clinical trade-off between sensitivity and nuisance alarms.</li>
+    <li>Assess the upstream negative pressure alarm activation: Was threshold near -120 mbar? Factors that could shift activation point?</li>
+    <li>Identify primary uncertainties (measurement resolution, priming residual air, temperature) that could influence your accuracy results.</li>
+  </ol>
+  <h2>Reflection</h2>
+  <ul>
+    <li>How would prolonged unnoticed downstream occlusion impact delivered dose for a potent drug (e.g., vasoactive agent)?</li>
+    <li>What design improvements could reduce time-to-occlusion alarm latency?</li>
+    <li>Discuss how integrating predictive pressure trending could improve safety versus threshold-only alarms.</li>
+  </ul>
+  <h2>Common Pitfalls</h2>
+  <ul>
+    <li>Insufficient priming causing spurious flow deviation or delayed pressure rise.</li>
+    <li>Not reprogramming rate before Step 2 occlusion test (using 100 instead of 200 mL/h).</li>
+    <li>Failing to note occlusion level setting before test (cannot interpret pressure afterward).</li>
+    <li>Introducing air while still connected to analyzer during quantitative flow step (invalid measurement).</li>
+    <li>Applying excessive force for upstream test, risking sensor damage.</li>
+  </ul>
+  <h2>Checklist (Complete Before Leaving)</h2>
+  <ul>
+    <li>Tables 1–4 fully populated with units.</li>
+    <li>All analysis questions answered with quantitative references.</li>
+    <li>Any deviations outside tolerance highlighted and possible causes listed.</li>
+    <li>Occlusion level mapping documented (Infusomat 0–9 → mmHg).</li>
+    <li>Lab notebook signed / validated by instructor or lab engineer.</li>
+    <li>All pumps stopped, tubing removed, waste water disposed appropriately, bench dried.</li>
+  </ul>
+  <h2>References</h2>
+  <ol>
+    <li>Fluke Biomedical. IDA‑5 Infusion Device Analyzer User Manual.</li>
+    <li>B. Braun. Infusomat Space Service / Operator Manual.</li>
+    <li>B. Braun. Perfusor Space Service / Operator Manual.</li>
+    <li>IEC 60601‑2‑24 (Infusion pumps and controllers) – conceptual reference.</li>
+  </ol>
+  <p><em>English adaptation – initial version. Verify pressure level mapping and specification citations during bilingual review.</em></p>
+</div>

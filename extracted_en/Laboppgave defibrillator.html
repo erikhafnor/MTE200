@@ -1,0 +1,119 @@
+<div class="lab-fragment" lang="en">
+  <h2>Defibrillator: Operation, Functional & Periodic Performance Tests (LIFEPAK 15)</h2>
+  <p class="lead">This lab develops competence in safe operation and structured performance verification of a modern biphasic defibrillator/monitor (LIFEPAK 15) using a dedicated defibrillator / pacer analyzer (Fluke Impulse 7000DP) and an oscilloscope. You will execute selected procedures from the Performance Inspection Procedure (PIP) and Service Manual: Delivered Energy, Charge Time, Sync, Pacer Characteristics, and Waveform Output. All energy discharges are directed into the analyzer (never a person). Use low energy (e.g., 5 J) while familiarizing yourself with controls to preserve battery capacity.</p>
+
+  <h3>Learning Objectives</h3>
+  <ul>
+    <li>Identify user interface elements, accessories, and safety interlocks of LIFEPAK 15.</li>
+    <li>Explain principles of transthoracic defibrillation and biphasic truncated exponential (BTE) waveforms.</li>
+    <li>Perform analyzer‑based Delivered Energy, Charge Time, Sync, and Pacer tests according to PIP.</li>
+    <li>Capture and interpret a defibrillation waveform on an oscilloscope; extract phase durations, peak voltage, and estimate delivered energy.</li>
+    <li>Assess pacer output current, pulse width, and rate accuracy versus specifications.</li>
+    <li>Document findings, compare to manufacturer tolerances, and determine pass/fail.</li>
+  </ul>
+
+  <h3>Safety & Professional Conduct</h3>
+  <ul>
+    <li><strong>Clear the area:</strong> Ensure no person (including yourself) is in contact with patient cables, electrodes, or analyzer plates when the device is charged. Verbally announce “<em>Charging</em>” and “<em>Clear – shocking</em>”.</li>
+    <li>All discharges go into the analyzer test load. Do <em>not</em> deliver energy to any person or improvised load.</li>
+    <li>Use lowest practical energies while learning controls; only raise energy for specified tests.</li>
+    <li>Return the defibrillator to the charger after lab so the next group has a fully charged unit.</li>
+    <li>Leakage current tests are <em>not</em> performed here (covered in a separate lab); acknowledge they are part of a full safety inspection.</li>
+    <li>Handle paddles and accessories carefully; avoid fluid ingress; inspect for damage before testing.</li>
+  </ul>
+
+  <h3>Equipment</h3>
+  <ul>
+    <li>LIFEPAK 15 defibrillator / monitor (battery + mains charger).</li>
+    <li>Defibrillator / pacer analyzer: Fluke Impulse 7000DP (or equivalent) with QUICK-COMBO interface / paddles interface.</li>
+    <li>Oscilloscope (e.g., Keysight InfiniiVision) with appropriate high‑voltage rated probe / differential input (follow manufacturer probe ratings).</li>
+    <li>Interconnect cables, test leads, synchronization leads as required by analyzer manual.</li>
+    <li>Service / PIP documentation (Delivered Energy, Charge Time, Sync, Pacer Characteristics, Waveform Output sections).</li>
+    <li>Data recording sheet or digital log (running protocol).</li>
+  </ul>
+
+  <h3>Background Summary</h3>
+  <p><strong>Defibrillation physiology:</strong> A high‑energy, brief biphasic current pulse depolarizes a critical mass of myocardial cells, terminating fibrillation and allowing the sinus node to reassert control. Success probability correlates with delivered <em>current</em> density through the myocardium, which depends on patient transthoracic impedance (Z).</p>
+  <p><strong>Biphasic truncated exponential (BTE) waveform:</strong> Two sequential exponential phases of opposite polarity, each truncated at a controlled time or voltage. Energy is preset by charging a capacitor to voltage V, then discharging through the patient (or test load). Ideal energy estimate: <code>J ≈ 0.5 · C · V<sup>2</sup></code> minus losses; actual delivered energy varies with Z due to current limiting and waveform truncation control.</p>
+  <p><strong>Charge time:</strong> Interval from charge initiation to “ready” indication; must be within spec (increases with selected Joules and battery depletion).</p>
+  <p><strong>Sync (cardioversion):</strong> Device detects R‑waves; shock is delivered within a defined window after the R to avoid T‑wave (vulnerable period). Pass criteria: marker alignment and timing tolerance (consult manual).</p>
+  <p><strong>Pacer function:</strong> LIFEPAK 15 can deliver transcutaneous pacing pulses. Key parameters: pacing current (mA), pulse width (ms), and rate (bpm). Accuracy and consistency across impedance loads must meet tolerance.</p>
+
+  <h3>Pre‑Procedure Checklist</h3>
+  <ol>
+    <li>Visually inspect device, cables, paddles / QUICK-COMBO pads, and analyzer connections; note any defects.</li>
+    <li>Verify analyzer self‑test passed and correct test load impedance selections are available (e.g., 25, 50, 75, 100 Ω).</li>
+    <li>Confirm oscilloscope probe / attenuation suits expected peak voltage (consult analyzer output specs—never exceed probe rating).</li>
+    <li>Review manufacturer tolerances for each planned test (Delivered Energy percent or Joule tolerance, charge time max, sync timing window, pacer current & rate ±% ranges).</li>
+    <li>Ensure adequate battery (≥50%) or connect to mains charger (record mode used).</li>
+    <li>Prepare data sheet with columns for: Test, Setting, Load (Ω), Measured, Spec, Pass/Fail, Notes.</li>
+  </ol>
+
+  <h3>Procedure</h3>
+  <ol>
+    <li><strong>Familiarization (Low Energy):</strong> Set 5 J, select paddles or pads mode on analyzer; charge and discharge into analyzer to observe workflow. Practice CLEAR verbalization.</li>
+    <li><strong>Delivered Energy Test:</strong> For a set of energies (e.g., 50 J, 100 J, 200 J) and impedance loads (e.g., 50 Ω and 100 Ω) on Impulse 7000DP: charge, deliver shock, record selected vs analyzer “delivered energy” reading. Repeat if outside tolerance to exclude operator error. Compare percentage error: <code>error % = (Delivered - Selected)/Selected · 100</code>.</li>
+    <li><strong>Charge Time Test:</strong> Select a high energy (e.g., 200 J). Start charge while timing (stopwatch or analyzer timer). Record charge time. If spec requires AC vs battery comparison note mode used.</li>
+    <li><strong>Sync Test:</strong> Enable SYNC. Provide analyzer simulated ECG with stable R‑waves (set heart rate ~80 bpm). Observe displayed markers; deliver synchronized shock. Record timing difference (ms) between R marker and shock marker (analyzer provides measurement). Verify within allowed window.</li>
+    <li><strong>Pacer Characteristics Test:</strong> Switch to pacing mode. Select rate (e.g., 70 bpm), current (e.g., 60 mA), and default pulse width. Analyzer displays measured rate, current, and pulse width; vary current (e.g., 30–90 mA) and load impedance (e.g., 50 & 100 Ω) to observe regulation. Record deviations.</li>
+    <li><strong>Waveform Output Test (Oscilloscope):</strong> Connect oscilloscope across analyzer’s high‑level waveform output (or differential output as instructed). Select a mid‑range energy (e.g., 100 J) at 50 Ω load. Charge and capture waveform. Measure: Phase 1 duration (t1), peak V1, Phase 2 duration (t2), peak V2, total delivered energy (compare to analyzer reading), and any overshoot or ringing. (If analyzer supplies an isolated BNC scaled output, apply correct scale factor.)</li>
+    <li><strong>Data Integrity:</strong> Complete pass/fail evaluation against specs. Highlight any out‑of‑tolerance results; repeat once to confirm. If still failing, note possible causes (battery low, connection resistance, incorrect load selection) and flag for instructor.</li>
+    <li><strong>Restore & Charge:</strong> Power down analyzer, set defibrillator on charger, tidy leads, archive data sheet.</li>
+  </ol>
+
+  <h3>Measurements & Analysis</h3>
+  <ol>
+    <li><strong>Delivered Energy Error:</strong> Tabulate selected vs delivered vs percent error. Confirm all within manufacturer tolerance (e.g., ±(15% or ±4 J)—verify actual spec from documentation).</li>
+    <li><strong>Impedance Dependence:</strong> Plot delivered energy vs impedance for a fixed selected Joule setting; comment on compensation behavior.</li>
+    <li><strong>Charge Time:</strong> Compare measured time to spec. Discuss factors that increase charge time (battery age, energy level, ambient temperature).</li>
+    <li><strong>Sync Timing:</strong> Evaluate R‑to‑shock delay; state compliance with window (e.g., ±10 ms of specified target). Discuss risk if synchronization mis‑fires on T‑wave.</li>
+    <li><strong>Pacer Accuracy:</strong> Compute % deviation for rate and current: <code>dev% = (Measured − Set) / Set · 100</code>. Note if current drops at higher impedance.</li>
+    <li><strong>Waveform Shape:</strong> Compare measured phase durations and peak voltages to typical BTE profile. If available, integrate waveform (numerical approximation) to estimate Joules and compare to analyzer value.</li>
+  </ol>
+
+  <h3>Documentation (Running Protocol)</h3>
+  <ul>
+    <li>Date/time, device ID, software version (if displayed), battery %.</li>
+    <li>Environmental notes (approx. room temp, mains / battery mode).</li>
+    <li>For each test: settings, load, measured values, spec, pass/fail, operator initials.</li>
+    <li>Waveform screenshot (oscilloscope hardcopy or photo) annotated with t1, t2, V1, V2.</li>
+    <li>Any anomalies and corrective actions (re-tested, connector reseated, etc.).</li>
+  </ul>
+
+  <h3>Reflection & Questions</h3>
+  <ol>
+    <li>Which parameter was closest to its tolerance limit? Possible physiological or technical impact if it drifts further?</li>
+    <li>How does patient impedance influence delivered energy in a BTE system vs a monophasic system?</li>
+    <li>Why is synchronization critical for cardioversion but not for ventricular fibrillation?</li>
+    <li>What factors could prolong charge time besides battery depletion?</li>
+    <li>How would you expand this protocol to include electrical safety (leakage) testing?</li>
+  </ol>
+
+  <h3>Common Pitfalls</h3>
+  <ul>
+    <li>Forgetting to set analyzer load impedance before discharge.</li>
+    <li>Not re‑arming SYNC between shocks (some devices require re‑enable).</li>
+    <li>Incorrect oscilloscope scaling leading to misread peak voltage.</li>
+    <li>Recording analyzer <em>selected</em> instead of <em>delivered</em> value.</li>
+    <li>Allowing electrodes/cables to contact conductive surfaces while charged.</li>
+  </ul>
+
+  <h3>Checklist (Sign Off)</h3>
+  <ul>
+    <li>Controls & accessories familiarization done at low energy.</li>
+    <li>Delivered Energy test (≥2 energies × ≥2 impedances) complete & within spec.</li>
+    <li>Charge Time measured & within spec.</li>
+    <li>Sync timing verified & documented.</li>
+    <li>Pacer current, rate, pulse width measured across impedances.</li>
+    <li>Waveform captured & parameters extracted.</li>
+    <li>All data logged; device returned to charger.</li>
+  </ul>
+
+  <h3>References</h3>
+  <ul>
+    <li>LIFEPAK 15 Performance Inspection Procedure (sections: Delivered Energy, Charge Time, Sync, Pacer).</li>
+    <li>LIFEPAK 15 Service Manual (Waveform Output Test pages ~203–205; verify exact pagination).</li>
+    <li>Fluke Impulse 7000DP User Manual (connection, load selection, measurement accuracy).</li>
+    <li>IEC 60601-2-4 (Particular requirements for cardiac defibrillators) – conceptual reference.</li>
+  </ul>
+</div>

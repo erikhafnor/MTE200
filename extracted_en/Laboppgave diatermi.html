@@ -1,0 +1,151 @@
+<div class="lab-fragment" lang="en">
+  <h2>Electrosurgery (Diathermy) Laboratory: Olympus UES‑40 (Monopolar Modes)</h2>
+  <p class="lead">In this lab you will safely operate a monopolar electrosurgical unit (ESU) (Olympus UES‑40), perform controlled output power and crest factor measurements with a calibrated Electrosurgery Analyzer (Fluke QA‑ES III), capture representative waveforms on an oscilloscope, and relate waveform modality (Pure Cut, Blend, Uro, Coag 1/2, Spray) to tissue effect (cutting vs hemostasis) using a surrogate tissue sample (pork chop: fat, vascular muscle, bone). Only <strong>monopolar</strong> functions are used in this exercise.</p>
+
+  <h3>Learning Objectives</h3>
+  <ul>
+    <li>Identify functional controls, connectors, indicators, and safety accessories of the UES‑40 ESU.</li>
+    <li>Explain how waveform duty cycle, peak voltage, and crest factor influence tissue effect (cut efficiency vs coagulation).</li>
+    <li>Measure output power accuracy at specified set points using a 400 Ω test load.</li>
+    <li>Determine crest factor for each selected mode and interpret differences.</li>
+    <li>Capture and describe oscilloscope waveforms for Pure Cut, Blend, Uro, Coag 1, Coag 2, and Spray modes.</li>
+    <li>Adjust mode / settings to optimize cut vs hemostasis on differing tissue types (fat, vascular muscle, near bone) while observing safe activation duty cycle (&lt;10 s per minute).</li>
+  </ul>
+
+  <h3>Safety & Warnings</h3>
+  <ul>
+    <li>The active electrode can cause thermal injury (burn). Never touch it directly or indirectly (via metal instruments) while the unit is powered.</li>
+    <li>Limit activation to &lt;10 seconds per minute to avoid overheating / overloading the generator.</li>
+    <li>Do <strong>not</strong> change analyzer impedance or measurement range while RF output is active (prevents analyzer damage).</li>
+    <li>Ensure the return (dispersive) electrode simulation / connection on the analyzer is correctly engaged before activation.</li>
+    <li>Keep flammable materials (alcohol prep, drapes) away from the active field; allow drying time after any cleaning.</li>
+    <li>Use smoke evacuation (RapidVac) when producing sustained vapor to reduce aerosol exposure.</li>
+    <li>Verify proper grounding / isolation per local electrical safety requirements (full leakage testing is outside this specific lab scope).</li>
+  </ul>
+
+  <h3>Equipment</h3>
+  <ul>
+    <li>Electrosurgery Analyzer (Fluke QA‑ES III) with 400 Ω test load (and other selectable loads if available).</li>
+    <li>Olympus UES‑40 electrosurgical unit (monopolar accessories: active handpiece, simulated dispersive electrode via analyzer).</li>
+    <li>Oscilloscope (Keysight InfiniiVision) with appropriate high‑frequency probe or RF attenuator (observe bandwidth & voltage limits).</li>
+    <li>Smoke evacuator: RapidVac (tubing & filter set).</li>
+    <li>Pork chop (distinct fat, muscle, bone regions) as tissue surrogate.</li>
+    <li>Data sheet (table for set power, measured power, crest factor, mode, notes).</li>
+    <li>PPE: lab coat, gloves, eye protection (smoke / splatter mitigation).</li>
+  </ul>
+
+  <h3>Background Summary</h3>
+  <p>Electrosurgery applies high‑frequency alternating current (hundreds of kHz) to tissue causing resistive (Joule) heating. <strong>Cutting</strong> requires rapid heating to vaporization producing incision with minimal lateral thermal spread (continuous waveform, relatively low peak voltage, lower crest factor). <strong>Coagulation</strong> favors intermittent bursts with higher peak voltage, allowing protein denaturation and hemostasis (higher crest factor, lower duty cycle). <strong>Crest factor</strong> = (V<sub>peak</sub> / V<sub>rms</sub>) is an indicator of spikiness; coag modes typically elevate crest factor to spark and desiccate tissue.</p>
+  <p>Different named modes modify duty cycle (burst / pause pattern), envelope modulation, and sometimes target voltage control. The analyzer internally converts delivered RF into equivalent power & crest factor values using resistive loads; real patient impedance is dynamic and not purely resistive.</p>
+
+  <h3>Pre‑Measurement Checklist</h3>
+  <ol>
+    <li>Inspect ESU handpiece, cable insulation, and analyzer leads for integrity.</li>
+    <li>Connect ESU active output to analyzer input; connect dispersive return simulation per analyzer manual.</li>
+    <li>Select 400 Ω test load (as specified for power verification) and confirm analyzer displays correct load.</li>
+    <li>Power on ESU and analyzer; allow warm‑up (per manuals) if required.</li>
+    <li>Ensure smoke evacuator ready (filter installed, suction tubing near tissue surrogate position).</li>
+    <li>Prepare oscilloscope: set coupling (likely 10:1 probe, appropriate vertical scale), time base to capture several RF bursts (e.g., a few ms/div) or envelope, plus secondary slower scale for duty cycle observation.</li>
+    <li>Prepare data table with columns: Mode, Set Power (W), Load (Ω), Measured Power (W), Crest Factor, Peak Voltage (if captured), Comments (cut quality / spark / char).</li>
+  </ol>
+
+  <h3>Power & Crest Factor Measurement Procedure</h3>
+  <ol>
+    <li><strong>Mode Familiarization:</strong> Cycle through Pure, Uro, Blend, Coag 1, Coag 2, Spray at low power (e.g., 30 W cut, 20–30 W coag) observing analyzer readouts briefly (&lt;2 s each) to see qualitative differences.</li>
+    <li><strong>Cut Modes Quantitative Test:</strong> For CUT settings: 150 W Pure, 150 W Uro, 125 W Blend (adjust if device uses discrete steps). For each:
+      <ul>
+        <li>Set analyzer to 400 Ω.</li>
+        <li>Arm smoke evacuator (optional for short bursts).</li>
+        <li>Activate ESU for ~2–3 s (stay &lt;10 s/min). Record measured power and crest factor (stabilized mid‑activation).</li>
+        <li>Repeat once for reproducibility; calculate % deviation: (Measured − Set)/Set × 100.</li>
+      </ul>
+    </li>
+    <li><strong>Coag Modes Quantitative Test:</strong> For COAG settings: 60 W Coag 1, 60 W Coag 2, 60 W Spray.
+      <ul>
+        <li>Repeat measurement steps above (short bursts; Spray may show rapid arcing and higher crest factor).</li>
+      </ul>
+    </li>
+    <li><strong>Oscilloscope Capture:</strong> Using analyzer’s waveform output (monitor / scope port), capture representative waveforms for each mode. For cut, capture continuous sinusoidal (or modulated) segments; for coag modes, capture burst trains. Document frequency (approx.), burst period, duty cycle, and peak amplitude.</li>
+  </ol>
+
+  <h3>Waveform Documentation & Interpretation</h3>
+  <p>Create a comparative table:</p>
+  <table class="lab-table">
+    <thead><tr><th>Mode</th><th>Set (W)</th><th>Measured (W)</th><th>% Dev</th><th>Crest Factor</th><th>Peak V (approx)</th><th>Duty / Burst Pattern</th><th>Primary Tissue Effect</th></tr></thead>
+    <tbody>
+      <tr><td>Pure</td><td>150</td><td></td><td></td><td></td><td></td><td>Continuous / high duty</td><td>Incision (minimal coag)</td></tr>
+      <tr><td>Uro</td><td>150</td><td></td><td></td><td></td><td></td><td>Modified continuous (specialized)</td><td>Targeted cut (urologic)</td></tr>
+      <tr><td>Blend</td><td>125</td><td></td><td></td><td></td><td></td><td>Interrupted (moderate duty)</td><td>Cut + moderate hemostasis</td></tr>
+      <tr><td>Coag 1</td><td>60</td><td></td><td></td><td></td><td></td><td>Bursts low duty</td><td>Coagulation</td></tr>
+      <tr><td>Coag 2</td><td>60</td><td></td><td></td><td></td><td></td><td>Bursts variant duty</td><td>Deeper coag</td></tr>
+      <tr><td>Spray</td><td>60</td><td></td><td></td><td></td><td></td><td>High peak, very low duty</td><td>Superficial hemostasis / fulguration</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Notes:</strong> Higher crest factor & lower duty cycle increase superficial char and hemostasis. Spray often shows intermittent arcing (higher peak voltage) creating a broader coag field.</p>
+
+  <h3>Tissue Interaction (Pork Chop Exercise)</h3>
+  <ol>
+    <li>Place tissue on insulated, non‑conductive surface; position smoke evacuator nozzle &lt;2–3 cm from site.</li>
+    <li>Using Pure cut at a moderate setting (e.g., 50–70 W first), make a brief incision through muscle; note incision quality (smoothness, lateral char).</li>
+    <li>Repeat incision with Blend and Uro: compare edge coagulation and char depth.</li>
+    <li>Apply Coag 1 then Coag 2 to a small bleeding surrogate area (light pressure not required here; observe surface whitening / shrinkage differences).</li>
+    <li>Use Spray mode briefly over fat vs muscle; observe surface carbonization and penetration difference.</li>
+    <li>Near bone area (cartilaginous / harder region): evaluate effect—avoid prolonged activation to prevent excessive thermal spread.</li>
+    <li>Record qualitative observations for each mode & tissue type (columns: Mode, Tissue Region, Effect Quality, Lateral Thermal Spread, Smoke Density, Notes).</li>
+  </ol>
+
+  <h3>Measurements & Analysis</h3>
+  <ol>
+    <li><strong>Power Accuracy:</strong> Compute % deviation for each measurement; confirm within manufacturer specification (e.g., ±(20% + 5 W)—verify actual spec in documentation).</li>
+    <li><strong>Repeatability:</strong> For one mode (Pure) repeat three times; calculate mean & standard deviation of measured power.</li>
+    <li><strong>Crest Factor Comparison:</strong> Rank modes by crest factor; correlate with observed tissue char / hemostasis.</li>
+    <li><strong>Duty Cycle Estimation:</strong> From scope waveform, estimate on-time vs period for Blend and Coag modes; relate to thermal effect.</li>
+    <li><strong>Energy Density Discussion:</strong> Qualitatively discuss why continuous waveforms produce cleaner cuts while interrupted bursts produce coagulation.</li>
+  </ol>
+
+  <h3>Documentation (Running Protocol)</h3>
+  <ul>
+    <li>Date/time, ESU model & serial, analyzer model & calibration date.</li>
+    <li>Ambient conditions (approx. temperature, note if mains supply stable).</li>
+    <li>Mode & settings table (as above) with measured power & crest factor.</li>
+    <li>Waveform screenshots/photos labeled with mode.</li>
+    <li>Tissue interaction observations table.</li>
+    <li>Any anomalies (e.g., unexpected power fluctuation, analyzer overload warning) plus corrective actions.</li>
+  </ul>
+
+  <h3>Reflection & Questions</h3>
+  <ol>
+    <li>Which mode exhibited the highest crest factor, and how did tissue effect differ?</li>
+    <li>How would an incorrect dispersive (return) electrode placement manifest clinically and in analyzer readings?</li>
+    <li>Why must analyzer load not be changed during activation?</li>
+    <li>What modifications might be needed when operating near implants or metallic staples?</li>
+    <li>Suggest additional quality control tests (e.g., leakage currents, alarm function) to achieve a full periodic maintenance protocol.</li>
+  </ol>
+
+  <h3>Common Pitfalls</h3>
+  <ul>
+    <li>Overlong activation causing thermal overload or inaccurate power reading due to duty cycle limits.</li>
+    <li>Changing analyzer settings mid-activation (risk of damage or erroneous crest factor).</li>
+    <li>Incorrect load impedance selection invalidating power comparison.</li>
+    <li>Oscilloscope probe attenuation mismatch leading to clipped waveforms.</li>
+    <li>Insufficient smoke evacuation increasing exposure to surgical plume.</li>
+  </ul>
+
+  <h3>Checklist (Sign Off)</h3>
+  <ul>
+    <li>Controls & connectors identified (monopolar only used).</li>
+    <li>Power & crest factor recorded for specified modes.</li>
+    <li>Waveforms captured & documented.</li>
+    <li>Tissue surrogate tests performed (fat, muscle, near bone) with notes.</li>
+    <li>All activation periods within duty cycle safety (&lt;10 s/min).</li>
+    <li>Reflection questions answered; device powered down; area cleaned; ESU left safe.</li>
+  </ul>
+
+  <h3>References</h3>
+  <ul>
+    <li>Olympus UES‑40 Operator / Service Documentation.</li>
+    <li>Fluke QA‑ES III Electrosurgery Analyzer Manual.</li>
+    <li>Keysight InfiniiVision Oscilloscope User Guide (bandwidth, probing for RF burst).</li>
+    <li>IEC 60601-2-2 (Electrosurgical equipment) – conceptual reference.</li>
+  </ul>
+</div>

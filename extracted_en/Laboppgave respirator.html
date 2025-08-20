@@ -1,0 +1,166 @@
+<div class="lab-fragment">
+  <h1>Ventilator (Respirator) Laboratory – Dräger Evita XL</h1>
+  <h2>Learning Objectives</h2>
+  <ul>
+    <li>Safely perform basic inspection and component replacement (SV diaphragm assembly) in the inspiratory block following service manual guidance with proper ESD precautions.</li>
+    <li>Differentiate volume‑controlled versus pressure‑controlled ventilation modes and describe how the Evita XL implements each.</li>
+    <li>Measure and interpret key respiratory parameters (tidal volume, inspiratory/expiratory flow, pressures) using a Fluke VT900 gas flow analyzer and a test lung.</li>
+    <li>Relate ventilator settings (VT, frequency, PEEP, inspiratory pressure, inspiratory time, flow pattern) to patient-centric outcomes (alveolar ventilation, mean airway pressure, risk of barotrauma/atelectasis).</li>
+    <li>Document a reproducible maintenance & functional test protocol for future quality assurance.</li>
+  </ul>
+  <h2>Safety & ESD Precautions</h2>
+  <ul>
+    <li>Disconnect device from patient use environment—simulation only.</li>
+    <li>Use ESD wrist strap and grounded mat before opening covers / handling PCB or diaphragm assemblies.</li>
+    <li>Verify gas supply isolation (if applicable) before disassembly; avoid introducing debris into inspiratory block.</li>
+    <li>After reassembly perform mandated leak / function tests before any clinical deployment.</li>
+  </ul>
+  <h2>Equipment</h2>
+  <ul>
+    <li>Dräger Evita XL ventilator</li>
+    <li>Service manual (Chapter 3: Repair Instructions; Inspiratory Block & SV diaphragm assembly procedure)</li>
+    <li>Replacement SV diaphragm assembly & inspection tools</li>
+    <li>Test lung (adult adjustable compliance if available)</li>
+    <li>Fluke VT900 Gas Flow Analyzer + breathing circuit adapters / flow sensor</li>
+    <li>Mouthpiece & tubing (for optional human breathing demonstration – ensure infection control)</li>
+    <li>Computer/software for VT900 data capture (if logging)</li>
+    <li>ESD strap, mat, suitable screwdrivers</li>
+  </ul>
+  <h2>Background</h2>
+  <p>The inspiratory block regulates delivered gas mixture, pressure generation & safety shutoff. The SV (safety) diaphragm assembly is critical for isolating patient circuit in fault conditions (e.g., supply pressure error, power failure)—ensuring passive safety by venting or sealing per design (see manual §3.3). Accurate diaphragm integrity prevents delivery pressure faults and unintended PEEP loss.</p>
+  <p>Ventilation modes broadly:</p>
+  <ul>
+    <li><strong>Volume-Controlled (VC)</strong>: Target tidal volume; airway pressure is resultant; risk of higher peak pressures with reduced compliance.</li>
+    <li><strong>Pressure-Controlled (PC)</strong>: Target inspiratory pressure; tidal volume varies with compliance/resistance; protects against excessive peak pressure but variable minute ventilation.</li>
+    <li><strong>Hybrid / Support Modes</strong>: e.g., Pressure Support, SIMV variants, AutoFlow or decelerating flow strategies (device-specific).</li>
+  </ul>
+  <p>Understanding pressure–volume loops, flow–time and pressure–time waveforms aids assessment of patient-ventilator synchrony, work of breathing, and risk of ventilator-induced lung injury (VILI).</p>
+  <h2>Pre‑Lab Preparation</h2>
+  <ol>
+    <li>Read Inspiratory Block procedure & SV diaphragm replacement steps.</li>
+    <li>Review ventilation mode descriptions & parameter adjustment sequences in operator manual.</li>
+    <li>Set up data capture template (tables below) for volumes, pressures, flow, and mode classification.</li>
+  </ol>
+  <h2>Part A – Mechanical Inspection & Component Replacement</h2>
+  <ol>
+    <li>Apply ESD controls (strap connected, mat verified).</li>
+    <li>Open access panel per service manual. Locate O<sub>2</sub> diaphragm—inspect for cracks / deformation. Record condition.</li>
+    <li>Remove and replace SV diaphragm assembly following specified torque / orientation. Photograph (optional) for documentation.</li>
+    <li>Perform post-replacement leak/flow or self-test sequence recommended by Dräger (note pass/fail).</li>
+    <li>Explain in notes: Why diaphragm integrity is critical during supply pressure fault or power failure (link to fail-safe design).</li>
+  </ol>
+  <h2>Part B – Mode Familiarization</h2>
+  <ol>
+    <li>Attach standard breathing circuit and test lung (no humidifier).</li>
+    <li>List available modes; categorize each as Volume-Controlled, Pressure-Controlled, Pressure Support, or Other (mixed/adaptive).</li>
+    <li>For 2 representative modes (one VC, one PC) set: VT (or target P<sub>insp</sub>), RR (frequency), PEEP, FiO<sub>2</sub> (simulate), inspiratory time or I:E ratio.</li>
+    <li>Observe waveforms; capture screenshot or sketch (pressure-time, flow-time) noting characteristic differences (square vs decelerating inspiratory flow, plateau presence).</li>
+  </ol>
+  <h2>Part C – Measurement with Fluke VT900</h2>
+  <ol>
+    <li>Insert VT900 flow sensor between ventilator wye and test lung; ensure leak-free joints.</li>
+    <li>Calibrate / zero VT900 per manual.</li>
+    <li>Run ventilation in VC mode with prescribed settings; record 10 consecutive breaths: measured V<sub>T</sub> (insp & exp), peak inspiratory pressure (PIP), plateau (if available), PEEP, mean airway pressure, inspiratory & expiratory peak flow.</li>
+    <li>Switch to PC mode using an inspiratory pressure that yields similar target VT (adjust P<sub>insp</sub> iteratively). Record same parameters.</li>
+    <li>Optional: Pressure Support mode with spontaneous simulation (manual bag or variable compliance) – note differences in trigger, cycling criteria.</li>
+    <li>Optional human breathing demo: A student gently breathes through mouthpiece & circuit connected to VT900 only (not the ventilator) to visualize natural tidal volumes and flow curves (infection control permitting).</li>
+  </ol>
+  <h2>Data Tables</h2>
+  <h3>Table 1: Mode Classification</h3>
+  <table>
+    <thead>
+      <tr><th>Mode Name</th><th>Category (VC/PC/PS/Other)</th><th>Primary Target Variable</th><th>Typical Flow Pattern</th><th>Notes (Triggers/Cycle)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 2: Volume-Controlled Measurements</h3>
+  <table>
+    <thead>
+      <tr><th>Breath #</th><th>Set VT (mL)</th><th>Measured VT Insp (mL)</th><th>Measured VT Exp (mL)</th><th>PIP (cmH2O)</th><th>Plateau (cmH2O)</th><th>PEEP (cmH2O)</th><th>Mean Airway P (cmH2O)</th><th>Peak Insp Flow (L/min)</th><th>Peak Exp Flow (L/min)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 3: Pressure-Controlled Measurements</h3>
+  <table>
+    <thead>
+      <tr><th>Breath #</th><th>Set P<sub>insp</sub> (cmH2O)</th><th>Result VT Insp (mL)</th><th>Result VT Exp (mL)</th><th>PIP (cmH2O)</th><th>PEEP (cmH2O)</th><th>Mean Airway P (cmH2O)</th><th>Inspiratory Time (s)</th><th>Peak Insp Flow (L/min)</th><th>Peak Exp Flow (L/min)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h3>Table 4: Comparative Summary (Average of 10 Breaths)</h3>
+  <table>
+    <thead>
+      <tr><th>Mode</th><th>Avg VT Insp (mL)</th><th>Avg VT Exp (mL)</th><th>Avg PIP (cmH2O)</th><th>Avg Mean Airway P</th><th>Avg PEEP</th><th>I:E Ratio</th><th>Estimated Minute Ventilation (L/min)</th><th>Comments (Variability, Stability)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>VC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>PC</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <h2>Analysis & Discussion Questions</h2>
+  <ol>
+    <li>Which mode produced more consistent tidal volume? Quantify coefficient of variation (CV%) for VT in each.</li>
+    <li>Contrast pressure-time and flow-time waveforms between VC and PC; how does flow pattern influence mean airway pressure?</li>
+    <li>If compliance suddenly decreases (e.g., ARDS), how would VT change in PC mode versus VC mode? Clinical implications?</li>
+    <li>Explain how PEEP influences alveolar recruitment and mean airway pressure; relate to risk-benefit (oxygenation vs hemodynamics).</li>
+    <li>Describe potential causes if measured expiratory VT is consistently lower than inspiratory VT (leaks, measurement drift, circuit compliance).</li>
+    <li>Why is diaphragm (SV) integrity essential for safety during supply pressure fault or power loss? Reference manual §3.3 concepts (fail-safe venting / check valve behavior).</li>
+    <li>Identify main uncertainty contributors in VT measurement (sensor accuracy %, temperature, humidity, leak) and estimate their combined effect.</li>
+  </ol>
+  <h2>Reflection</h2>
+  <ul>
+    <li>How would you prioritize ventilator settings for a patient with severe restrictive disease versus obstructive disease?</li>
+    <li>What early waveform signs suggest patient-ventilator asynchrony (e.g., double triggering, flow starvation)?</li>
+    <li>Propose an enhancement to alarm design that could reduce alarm fatigue while preserving patient safety.</li>
+  </ul>
+  <h2>Common Pitfalls</h2>
+  <ul>
+    <li>Omitting ESD protection before touching internal assemblies.</li>
+    <li>Failing to recalibrate / zero VT900 after sensor repositioning.</li>
+    <li>Recording fewer than 10 stable breaths (including transitional breaths after setting changes).</li>
+    <li>Mixing units (cmH2O vs kPa) in data tables.</li>
+    <li>Not adjusting target P<sub>insp</sub> in PC mode to approximate VC tidal volume before comparison.</li>
+  </ul>
+  <h2>Checklist</h2>
+  <ul>
+    <li>SV diaphragm inspected & replaced; pass/fail post-test recorded.</li>
+    <li>Mode list categorized (Table 1).</li>
+    <li>10-breath datasets for VC & PC completed (Tables 2 & 3).</li>
+    <li>Summary Table 4 populated with averages & minute ventilation.</li>
+    <li>All analysis & reflection questions answered with quantitative references.</li>
+    <li>Lab protocol signed by instructor.</li>
+  </ul>
+  <h2>References</h2>
+  <ol>
+    <li>Dräger Evita XL Service Manual – Chapter 3 Repair Instructions.</li>
+    <li>Dräger Evita XL Operator Manual.</li>
+    <li>Fluke VT900 Gas Flow Analyzer User Manual.</li>
+    <li>Relevant ventilator management guidelines (e.g., ARDSnet) – conceptual only.</li>
+  </ol>
+  <p><em>English adaptation – initial version. Validate mode nomenclature and SV diaphragm safety description during bilingual review.</em></p>
+</div>

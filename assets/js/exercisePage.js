@@ -102,11 +102,26 @@
     const file = map[id];
     if(!file) return;
     try {
-      const resp = await fetch('extracted/' + encodeURI(file));
-      if(!resp.ok) return;
-      const html = await resp.text();
+      const lang = window.currentLang || 'en';
+      // Attempt language-specific version first (if English requested)
+      let html = '';
+      let sourceLabel = '';
+      if(lang==='en'){
+        const enResp = await fetch('extracted_en/' + encodeURI(file));
+        if(enResp.ok){
+          html = await enResp.text();
+          sourceLabel = 'English pedagogical adaptation (original Norwegian source retained).';
+        }
+      }
+      if(!html){
+        // Fallback to original Norwegian
+        const noResp = await fetch('extracted/' + encodeURI(file));
+        if(!noResp.ok) return; // Nothing to show
+        html = await noResp.text();
+        sourceLabel = lang==='no' ? 'Full tekst hentet fra original Word-fil.' : 'Original Norwegian full text (translation not yet available).';
+      }
       const full = document.getElementById('full-text');
-      full.innerHTML = '<div class="lab-meta-callout">'+(window.currentLang==='no'?'Dette er den fulle teksten fra Word-filen.':'Full text extracted from the original Word document.')+'</div>' + html;
+      full.innerHTML = '<div class="lab-meta-callout">'+ sourceLabel +'</div>' + html;
       buildTOC();
       initScrollSpy();
     } catch(e){/* ignore */}
