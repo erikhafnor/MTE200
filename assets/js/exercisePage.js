@@ -102,23 +102,34 @@
     const file = map[id];
     if(!file) return;
     try {
-      const lang = window.currentLang || 'en';
-      // Attempt language-specific version first (if English requested)
+      const uiLang = window.currentLang || 'en';
+      const fullTextLang = window.fullTextLang || (uiLang==='en' ? 'en':'no');
       let html = '';
       let sourceLabel = '';
-      if(lang==='en'){
+      if(fullTextLang==='en'){
         const enResp = await fetch('extracted_en/' + encodeURI(file));
         if(enResp.ok){
           html = await enResp.text();
           sourceLabel = 'English pedagogical adaptation (original Norwegian source retained).';
+        } else {
+          // fallback to Norwegian if English missing
+          const noResp = await fetch('extracted/' + encodeURI(file));
+          if(!noResp.ok) return;
+            html = await noResp.text();
+            sourceLabel = 'English adaptation not available yet – showing Norwegian original.';
         }
-      }
-      if(!html){
-        // Fallback to original Norwegian
+      } else { // Norwegian requested explicitly
         const noResp = await fetch('extracted/' + encodeURI(file));
-        if(!noResp.ok) return; // Nothing to show
-        html = await noResp.text();
-        sourceLabel = lang==='no' ? 'Full tekst hentet fra original Word-fil.' : 'Original Norwegian full text (translation not yet available).';
+        if(noResp.ok){
+          html = await noResp.text();
+          sourceLabel = uiLang==='no' ? 'Full tekst hentet fra original Word-fil.' : 'Original Norwegian source text.';
+        } else {
+          // fallback attempt English if Norwegian somehow missing
+          const enResp = await fetch('extracted_en/' + encodeURI(file));
+          if(!enResp.ok) return;
+          html = await enResp.text();
+          sourceLabel = 'Norwegian source not found – showing English adaptation.';
+        }
       }
       const full = document.getElementById('full-text');
       full.innerHTML = '<div class="lab-meta-callout">'+ sourceLabel +'</div>' + html;
@@ -185,6 +196,23 @@
 
   document.getElementById('mode-steps').addEventListener('click', ()=> setMode('steps'));
   document.getElementById('mode-full').addEventListener('click', ()=> setMode('full'));
+
+  // Full text language toggle (independent of overall UI language)
+  window.fullTextLang = (window.currentLang||'en');
+  const ftButtons = document.querySelectorAll('.ft-lang-btn');
+  ftButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const lang = btn.dataset.ftlang;
+      if(window.fullTextLang === lang) return;
+      window.fullTextLang = lang;
+      ftButtons.forEach(b=>b.classList.toggle('active', b===btn));
+      loadFullText();
+    });
+  });
+
+  // Re-load full text also when UI language changes to adjust labels but keep chosen full text language unless button changed
+  const langObserver = new MutationObserver(()=>{ loadFullText(); });
+  langObserver.observe(document.documentElement,{attributes:true, attributeFilter:['lang']});
 
   renderMeta();
   renderSteps();
