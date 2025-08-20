@@ -12,6 +12,29 @@
     <li>Adjust mode / settings to optimize cut vs hemostasis on differing tissue types (fat, vascular muscle, near bone) while observing safe activation duty cycle (&lt;10 s per minute).</li>
   </ul>
 
+  <div class="callout-warn">
+    <strong>Activation Discipline:</strong> Limit RF activation to short bursts (&lt;10 s/min cumulative) to prevent generator overheating and excessive tissue thermal spread. Never reposition the analyzer load while output is active.
+  </div>
+
+  <div class="metric-cards">
+    <div class="metric-card"><div class="metric-value">400 Ω</div><div class="metric-label">Test Load</div></div>
+    <div class="metric-card"><div class="metric-value">150 W</div><div class="metric-label">Cut Set (Pure/Uro)</div></div>
+    <div class="metric-card"><div class="metric-value">125 W</div><div class="metric-label">Blend Set</div></div>
+    <div class="metric-card"><div class="metric-value">60 W</div><div class="metric-label">Coag/Spray Set</div></div>
+    <div class="metric-card"><div class="metric-value">↑ Spray</div><div class="metric-label">Highest Crest Factor</div></div>
+  </div>
+
+  <h3>Measurement Sequence Overview</h3>
+  <ol class="timeline">
+    <li><span class="time">Setup</span><div class="desc">Connections, load select, safety check.</div></li>
+    <li><span class="time">Familiarize</span><div class="desc">Low‑power mode cycling.</div></li>
+    <li><span class="time">Cut Tests</span><div class="desc">Pure, Uro, Blend power & crest factor.</div></li>
+    <li><span class="time">Coag Tests</span><div class="desc">Coag 1, Coag 2, Spray measurements.</div></li>
+    <li><span class="time">Waveforms</span><div class="desc">Oscilloscope capture (duty, peaks).</div></li>
+    <li><span class="time">Tissue</span><div class="desc">Pork chop comparative tissue effects.</div></li>
+    <li><span class="time">Analysis</span><div class="desc">Deviation, crest factor ranking.</div></li>
+  </ol>
+
   <h3>Safety & Warnings</h3>
   <ul>
     <li>The active electrode can cause thermal injury (burn). Never touch it directly or indirectly (via metal instruments) while the unit is powered.</li>
@@ -114,6 +137,7 @@
   </ul>
 
   <h3>Reflection & Questions</h3>
+  <div class="lab-separator"></div>
   <ol>
     <li>Which mode exhibited the highest crest factor, and how did tissue effect differ?</li>
     <li>How would an incorrect dispersive (return) electrode placement manifest clinically and in analyzer readings?</li>

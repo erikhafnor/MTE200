@@ -9,6 +9,29 @@
     <li>Carry out a limited functional test on a volunteer (vascular scanning – carotid or radial artery) ethically and safely.</li>
     <li>Understand and explain key imaging parameter controls (Dynamic Range, CrossBeam, Focus Width, Suppression, Line Density) and probe label nomenclature.</li>
   </ul>
+  <div class="callout-info">
+    <strong>Workflow Integrity:</strong> Always acquire the study from a DICOM MWL selection to ensure consistent patient & study identifiers—critical for longitudinal QA and avoiding orphan images.
+  </div>
+
+  <div class="metric-cards">
+    <div class="metric-card"><div class="metric-value">N‑365</div><div class="metric-label">Phantom Model</div></div>
+    <div class="metric-card"><div class="metric-value">1540</div><div class="metric-label">Speed Assumed (m/s)</div></div>
+    <div class="metric-card"><div class="metric-value">&lt;1 mm</div><div class="metric-label">Axial Res Goal</div></div>
+    <div class="metric-card"><div class="metric-value">High</div><div class="metric-label">Line Density</div></div>
+    <div class="metric-card"><div class="metric-value">≈70 dB</div><div class="metric-label">Dyn Range Start</div></div>
+  </div>
+
+  <h2>Workflow Overview</h2>
+  <ol class="timeline">
+    <li><span class="time">ADT</span><div class="desc">Create patient (HL7 ADT) in HIS.</div></li>
+    <li><span class="time">MWL</span><div class="desc">Query & select worklist entry on modality.</div></li>
+    <li><span class="time">Phantom</span><div class="desc">Run performance tests & capture images.</div></li>
+    <li><span class="time">Optimize</span><div class="desc">Parameter tuning & rationale documentation.</div></li>
+    <li><span class="time">Store</span><div class="desc">Send images (C‑STORE) to PACS.</div></li>
+    <li><span class="time">Verify</span><div class="desc">Retrieve in OHIF & confirm metadata.</div></li>
+    <li><span class="time">Volunteer</span><div class="desc">Ethical vascular scan (optional) & images.</div></li>
+    <li><span class="time">Analysis</span><div class="desc">Answer reflection questions.</div></li>
+  </ol>
   <h2>Safety & Handling</h2>
   <ul>
     <li>Handle probes carefully – acoustic lens is delicate; always use ultrasound gel (never scan the phantom dry).</li>
@@ -117,6 +140,7 @@
     <li>P or S / Sector: Phased array for cardiac intercostal windows (e.g., P4‑2).</li>
   </ul>
   <h2>Analysis & Reflection Questions</h2>
+  <div class="lab-separator"></div>
   <ol>
     <li>How did adjusting dynamic range affect cyst detection and string target contrast? Provide before/after image references.</li>
     <li>Quantify improvement (if any) in lateral resolution (Δx) with increased line density and CrossBeam enabled versus baseline.</li>
