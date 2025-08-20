@@ -7,41 +7,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/theme_ele630.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="inner">
-      <h1 class="course-code" data-i18n="course_code">MTE200</h1>
-      <h2 class="course-title" data-i18n="course_title">Medical Equipment</h2>
+    <a href="index.html" class="brand" data-i18n="course_code">MTE200</a>
+    <div class="nav-right">
       <div class="lang-switch" aria-label="Language toggle">
-        <button id="lang-no" class="lang-btn" data-lang="no">NO</button>
-        <button id="lang-en" class="lang-btn active" data-lang="en">EN</button>
+        <button id="lang-no" data-lang="no">NO</button>
+        <button id="lang-en" class="active" data-lang="en">EN</button>
       </div>
     </div>
   </header>
 
   <main class="content">
     <section class="hero">
-      <div class="inner hero-inner">
-        <p class="tagline" data-i18n="tagline">Laboratory exercises in biomedical instrumentation & safety.</p>
-        <p class="sub" data-i18n="choose_intro">Explore the exercises below. Prepare, perform, reflect.</p>
+      <div class="hero-inner">
+        <h1 data-i18n="course_title">Medical Equipment</h1>
+        <p class="subtitle" data-i18n="tagline">Laboratory exercises in biomedical instrumentation & safety.</p>
       </div>
     </section>
 
-    <section id="exercises" class="catalog">
-      <div class="inner">
-        <h3 data-i18n="exercise_catalog">Exercise Catalog</h3>
+    <section id="exercises">
+      <div class="section-header">
+        <h2 data-i18n="exercise_catalog">Exercise Catalog</h2>
+        <p class="section-tag" data-i18n="choose_intro">Explore the exercises below. Prepare, perform, reflect.</p>
         <div class="filter-bar">
           <input id="exercise-search" type="search" autocomplete="off" data-i18n-placeholder="search_placeholder" placeholder="Search exercises..." aria-label="Search" />
           <button id="clear-search" type="button" class="clear-btn" aria-label="Clear">×</button>
         </div>
-        <div id="exercise-grid" class="grid"></div>
       </div>
+      <div id="exercise-grid" class="project-grid" data-scroll-fade></div>
     </section>
 
-    <section class="about">
-      <div class="inner">
+    <section class="about" style="background:#fff;">
+      <div class="section-header" style="max-width:900px;">
         <h3 data-i18n="about_header">About</h3>
         <p data-i18n="about_text">These lab exercises support core learning outcomes in medical technology: measurement principles, risk management, patient safety, and regulatory awareness.</p>
       </div>
@@ -49,9 +49,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="inner">
-      <p>© <span id="year"></span> <span data-i18n="footer_course">MTE200 – Educational use only.</span></p>
-    </div>
+    <p>© <span id="year"></span> <span data-i18n="footer_course">MTE200 – Educational use only.</span></p>
   </footer>
 
   <script src="assets/js/i18n.js"></script>

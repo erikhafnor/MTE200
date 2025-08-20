@@ -75,15 +75,16 @@ const EXERCISES = [
 
 function createExerciseCard(ex) {
   const lang = window.currentLang || 'en';
-  const card = document.createElement('div');
-  card.className = 'card';
+  const card = document.createElement('a');
+  card.className = 'project-card';
+  card.href = `exercise.html?id=${encodeURIComponent(ex.id)}`;
   const title = ex.title[lang];
   const blurb = ex.blurb[lang];
   card.innerHTML = `
-    <h4>${title}</h4>
-    <div class="badges">${ex.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
-    <p>${blurb}</p>
-    <a href="exercise.html?id=${encodeURIComponent(ex.id)}" aria-label="${title}">${lang==='no'?'Åpne interaktiv':'Open interactive'}</a>
+  <h4>${title}</h4>
+  <p>${blurb}</p>
+  <div class="badges">${ex.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+  <span class="open-link">${lang==='no'?'Åpne':'Open'}</span>
   `;
   return card;
 }

@@ -88,9 +88,48 @@
   const observer = new MutationObserver(()=>{ renderMeta(); renderSteps(); updateProgressUI(); updateNav(); });
   observer.observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 
+  async function loadFullText(){
+    // Map exercise id to doc filename used in extraction
+    const map = {
+      ekg: 'Laboppgave EKG-registrering.html',
+      bp_pulseox: 'Laboppgave blodtrykk og pulsoksymetri.html',
+      defib: 'Laboppgave defibrillator.html',
+      diathermy: 'Laboppgave diatermi.html',
+      infusion: 'Laboppgave infusjonspumper.html',
+      respirator: 'Laboppgave respirator.html',
+      ultrasound: 'laboppgave ultralyd.html'
+    };
+    const file = map[id];
+    if(!file) return;
+    try {
+      const resp = await fetch('extracted/' + encodeURI(file));
+      if(!resp.ok) return;
+      const html = await resp.text();
+      const full = document.getElementById('full-text');
+      full.innerHTML = '<div class="lab-meta-callout">'+(window.currentLang==='no'?'Dette er den fulle teksten fra Word-filen.':'Full text extracted from the original Word document.')+'</div>' + html;
+    } catch(e){/* ignore */}
+  }
+
+  function setMode(mode){
+    const stepsView = document.getElementById('steps-view');
+    const full = document.getElementById('full-text');
+    document.querySelectorAll('.toggle-mode').forEach(b=>b.classList.toggle('mode-active', b.dataset.mode===mode));
+    if(mode==='full'){
+      stepsView.style.display='none';
+      full.classList.add('active');
+    } else {
+      stepsView.style.display='block';
+      full.classList.remove('active');
+    }
+  }
+
+  document.getElementById('mode-steps').addEventListener('click', ()=> setMode('steps'));
+  document.getElementById('mode-full').addEventListener('click', ()=> setMode('full'));
+
   renderMeta();
   renderSteps();
   updateProgressUI();
   updateNav();
   autoScrollCurrent();
+  loadFullText();
 })();
