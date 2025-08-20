@@ -58,6 +58,10 @@ Step 2  Type: Occlusion  Rate: 200 mL/h  Vol/Press: 487 mmHg  Time: 01:00  Tol%:
     <li>From channel overview: Setup &gt; Template &gt; select template &gt; Start &gt; enter arbitrary control number.</li>
   </ol>
   <h2>Procedure</h2>
+  <div class="callout callout-info">
+    <div class="callout-icon">ℹ</div>
+    <div><strong>Tip:</strong> Use identical environmental conditions (temperature) for both channels to reduce viscosity-related drift in rate accuracy.</div>
+  </div>
   <ol>
     <li><strong>Start Flow Test (Step 1):</strong> After template start the analyzer prompts for priming. Deliver ~5 mL until IDA‑5 shows <em>Auto Start</em>. Select Auto Start, then start the pump. Repeat for Channel 2 (ESC back to overview).</li>
     <li>Record analyzer displayed <em>rate, deviation (%), elapsed time, peak pressure</em> for each channel (use Table 1).</li>
@@ -71,6 +75,12 @@ Step 2  Type: Occlusion  Rate: 200 mL/h  Vol/Press: 487 mmHg  Time: 01:00  Tol%:
     <li><strong>Upstream (Negative) Pressure Alarm:</strong> Gently restrict or elevate source bag / pinch upstream line to create a partial vacuum until &quot;upstream&quot; / negative pressure alarm occurs (threshold approx. -120 mbar). Record method, time, and displayed pressure (Table 4). Do not apply excessive force (avoid damaging sensors).</li>
   </ol>
   <h2>Data Recording</h2>
+  <div class="metric-cards">
+    <div class="metric-card"><span class="metric-label">Tol Window</span><span class="metric-value">±5%</span><span class="metric-note">Applied to Step 1 flow</span></div>
+    <div class="metric-card"><span class="metric-label">Occlusion Target</span><span class="metric-value">487 mmHg</span><span class="metric-note">Analyzer stop limit</span></div>
+    <div class="metric-card"><span class="metric-label">Prime Volume</span><span class="metric-value">5 mL</span><span class="metric-note">Post Auto Start prompt</span></div>
+    <div class="metric-card"><span class="metric-label">Channels</span><span class="metric-value">2</span><span class="metric-note">Simultaneous run</span></div>
+  </div>
   <h3>Table 1: Flow Accuracy (Step 1)</h3>
   <table>
     <thead>
@@ -111,6 +121,7 @@ Step 2  Type: Occlusion  Rate: 200 mL/h  Vol/Press: 487 mmHg  Time: 01:00  Tol%:
     </tbody>
   </table>
   <h2>Analysis Questions</h2>
+  <hr class="lab-separator" />
   <ol>
     <li>Compare flow accuracy between the volumetric and the syringe pump. Which was closer to the programmed rate? Provide quantitative difference and hypothesize causes (mechanism, compliance, calibration state).</li>
     <li>Explain mechanical and fluidic reasons the occlusion pressure profile and time to alarm differ between the two pump types.</li>
@@ -128,6 +139,11 @@ Step 2  Type: Occlusion  Rate: 200 mL/h  Vol/Press: 487 mmHg  Time: 01:00  Tol%:
     <li>Discuss how integrating predictive pressure trending could improve safety versus threshold-only alarms.</li>
   </ul>
   <h2>Common Pitfalls</h2>
+  <ul class="timeline">
+    <li><h4>Priming Skipped</h4><p>Residual air pockets inflate deviation & delay occlusion detection.</p></li>
+    <li><h4>Wrong Step Rate</h4><p>Forgetting to change to 200 mL/h before Step 2 skews pressure ramp profile.</p></li>
+    <li><h4>Unlogged Occlusion Level</h4><p>Lack of level mapping prevents meaningful pass/fail judgment.</p></li>
+  </ul>
   <ul>
     <li>Insufficient priming causing spurious flow deviation or delayed pressure rise.</li>
     <li>Not reprogramming rate before Step 2 occlusion test (using 100 instead of 200 mL/h).</li>
